@@ -1,21 +1,28 @@
 {
-    "name": "John Doe",
-    "resourcesText": "Ressources disponibles",
-    "resources": [
+    "items": [
         {
-            "name": "Ressource 1",
-            "percentage": 70,
-            "color": "#28a745"
+            "title": "Les 48 Lois du Pouvoir",
+            "description": "Un guide stratégique pour réussir."
         },
         {
-            "name": "Ressource 2",
-            "percentage": 50,
-            "color": "#17a2b8"
+            "title": "Les 36 Stratagèmes",
+            "description": "Un manuel chinois de ruse et de stratégie."
         },
         {
-            "name": "Ressource 3",
-            "percentage": 90,
-            "color": "#ffc107"
+            "title": "Les étapes créatrices de la vie",
+            "description": "Un parcours pour comprendre les processus créatifs."
+        },
+        {
+            "title": "Ma Bibliothèque",
+            "description": "Une collection personnelle de livres inspirants."
+        },
+        {
+            "title": "Mes Images Favorites",
+            "description": "Un album de souvenirs visuels."
+        },
+        {
+            "title": "Mes Chaînes YouTube Préférées",
+            "description": "Des chaînes qui m'inspirent quotidiennement."
         }
     ]
 }
