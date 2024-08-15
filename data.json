@@ -1,0 +1,21 @@
+{
+    "name": "John Doe",
+    "resourcesText": "Ressources disponibles",
+    "resources": [
+        {
+            "name": "Ressource 1",
+            "percentage": 70,
+            "color": "#28a745"
+        },
+        {
+            "name": "Ressource 2",
+            "percentage": 50,
+            "color": "#17a2b8"
+        },
+        {
+            "name": "Ressource 3",
+            "percentage": 90,
+            "color": "#ffc107"
+        }
+    ]
+}
