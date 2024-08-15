@@ -11,134 +11,129 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
+        /* Cascade Layers */
+        @layer reset, base, components, utilities;
+
+        /* Base Styles */
+        @layer base {
+            body {
+                background-color: #f5f5f5;
+                color: #333;
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
         }
 
-        .buff-bar {
-            background-color: #4a4e69;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Component Styles */
+        @layer components {
+            .buff-bar {
+                background-color: #4a4e69;
+                color: #fff;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .buff-icon {
+                margin: 0 15px;
+                cursor: pointer;
+                transition: color 0.3s, transform 0.3s;
+            }
+
+            .buff-icon:hover {
+                color: #9a8c98;
+                transform: rotate(15deg);
+            }
+
+            .hero {
+                background-color: #22223b;
+                color: #f2e9e4;
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-variation-settings: 'wght' 400;
+                transition: font-variation-settings 0.5s;
+            }
+
+            .hero h1:hover {
+                font-variation-settings: 'wght' 900;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .btn-primary {
+                background-color: #9a8c98;
+                border-color: #9a8c98;
+            }
+
+            .btn-primary:hover {
+                background-color: #c9ada7;
+                border-color: #c9ada7;
+            }
+
+            .social-icon {
+                background-color: #4a4e69;
+                color: #fff;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 10px;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            .social-icon:hover {
+                background-color: #c9ada7;
+                transform: scale(1.1);
+            }
+
+            .progress-bar-custom {
+                font-size: 1rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .neomorphism {
+                background: #e0e0e0;
+                box-shadow: 8px 8px 15px #a3a3a3, -8px -8px 15px #ffffff;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .animated-element {
+                animation: rotate 2s linear infinite;
+            }
+
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
         }
 
-        .buff-icon {
-            margin: 0 15px;
-            cursor: pointer;
-            transition: color 0.3s, transform 0.3s;
+        /* Utility Styles */
+        @layer utilities {
+            .rounded-xxl {
+                border-radius: 2rem;
+            }
         }
 
-        .buff-icon:hover {
-            color: #9a8c98;
-            transform: rotate(15deg);
-        }
-
-        .hero {
-            background-color: #22223b;
-            color: #f2e9e4;
-            padding: 60px 0;
-        }
-
-        .hero h1 {
-            font-weight: 700;
-            font-size: 3rem;
-            animation: fadeInDown 2s;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-        }
-
-        .btn-primary {
-            background-color: #9a8c98;
-            border-color: #9a8c98;
-        }
-
-        .btn-primary:hover {
-            background-color: #c9ada7;
-            border-color: #c9ada7;
-        }
-
-        .social-icon {
-            background-color: #4a4e69;
-            color: #fff;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .social-icon:hover {
-            background-color: #c9ada7;
-            transform: scale(1.1);
-        }
-
-        .progress-bar-custom {
-            font-size: 1rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        footer {
-            background-color: #22223b;
-            color: #f2e9e4;
-            padding: 20px 0;
-        }
-
-        .nav-icon {
-            font-size: 24px;
-            color: #fff;
-            margin: 0 15px;
+        /* Example of Scroll-triggered Effect */
+        .scroll-effect {
             transition: color 0.3s;
         }
 
-        .nav-icon:hover {
-            color: #c9ada7;
-        }
-
-        #userInfoModal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f2e9e4;
-            padding: 20px;
-            border: 2px solid #4a4e69;
-            border-radius: 10px;
-        }
-
-        #userInfoModal.show {
-            display: block;
-        }
-
-        #saveUserInfo {
-            background-color: #4a4e69;
-            border-color: #4a4e69;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .scroll-effect.in-view {
+            color: red;
         }
     </style>
 </head>
@@ -149,7 +144,6 @@
         <i class="fas fa-user buff-icon" aria-label="User Icon" title="User Icon"></i>
         <i class="fas fa-heart buff-icon" aria-label="Heart Icon" title="Heart Icon"></i>
         <i class="fas fa-star buff-icon" aria-label="Star Icon" title="Star Icon"></i>
-        <!-- Ajoutez d'autres icônes ici pour des buffs -->
     </header>
 
     <!-- Hero Section -->
@@ -170,27 +164,31 @@
     </section>
 
     <!-- Progress Section -->
-    <section class="character-section container text-center">
-        <h2>Notre Personnage 🎮</h2>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" alt="Photo de Profil" class="rounded-circle border border-primary" loading="lazy">
-                <h3 id="characterName">👤 Nom du Personnage</h3>
-                <p id="resourcesText">💎 Ressources disponibles</p>
-                <div id="progressBars">
-                    <div class="progress my-3">
-                        <div class="progress-bar bg-danger progress-bar-custom" id="healthBar" style="width: 70%;">
-                            ❤️ Vie
-                        </div>
-                    </div>
-                    <div class="progress my-3">
-                        <div class="progress-bar bg-info progress-bar-custom" id="manaBar" style="width: 50%;">
-                            💧 Mana
-                        </div>
-                    </div>
-                    <div class="progress my-3">
-                        <div class="progress-bar bg-success progress-bar-custom" id="xpBar" style="width: 80%;">
-                            ⭐ Expérience
+    <section class="container my-5">
+        <div class="card shadow border rounded-xxl">
+            <div class="card-body">
+                <h2 class="card-title text-center">Notre Personnage 🎮</h2>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-4 text-center">
+                        <img src="https://via.placeholder.com/150" alt="Photo de Profil" class="rounded-circle border border-primary" loading="lazy">
+                        <h3 id="characterName" class="mt-3">👤 Nom du Personnage</h3>
+                        <p id="resourcesText">💎 Ressources disponibles</p>
+                        <div id="progressBars">
+                            <div class="progress my-3">
+                                <div class="progress-bar bg-danger progress-bar-custom" id="healthBar" style="width: 70%;">
+                                    ❤️ Vie
+                                </div>
+                            </div>
+                            <div class="progress my-3">
+                                <div class="progress-bar bg-info progress-bar-custom" id="manaBar" style="width: 50%;">
+                                    💧 Mana
+                                </div>
+                            </div>
+                            <div class="progress my-3">
+                                <div class="progress-bar bg-success progress-bar-custom" id="xpBar" style="width: 80%;">
+                                    ⭐ Expérience
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,37 +198,62 @@
 
     <!-- Search Section -->
     <section class="container my-5">
-        <h2>Recherche</h2>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Search Input">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">Rechercher</button>
+        <div class="card shadow border rounded-xxl">
+            <div class="card-body">
+                <h2 class="card-title text-center">Recherche</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Search Input">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Rechercher</button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-4">
+                    <a href="#" class="mx-2" aria-label="Grid View" title="Grid View"><i class="fas fa-th-large fa-2x"></i></a>
+                    <a href="#" class="mx-2" aria-label="List View" title="List View"><i class="It seems the response was cut off. I'll continue and finalize the updated code incorporating the latest CSS trends and best practices:
+
+```html
+                    <a href="#" class="mx-2" aria-label="List View" title="List View"><i class="fas fa-list fa-2x"></i></a>
+                    <a href="#" class="mx-2" aria-label="Timeline View" title="Timeline View"><i class="fas fa-stream fa-2x"></i></a>
+                    <a href="#" class="mx-2" aria-label="Page View" title="Page View"><i class="fas fa-file-alt fa-2x"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-center my-4">
-            <a href="#" class="mx-2" aria-label="Grid View" title="Grid View"><i class="fas fa-th-large fa-2x"></i></a>
-            <a href="#" class="mx-2" aria-label="List View" title="List View"><i class="fas fa-list fa-2x"></i></a>
-            <a href="#" class="mx-2" aria-label="Timeline View" title="Timeline View"><i class="fas fa-stream fa-2x"></i></a>
-            <a href="#" class="mx-2" aria-label="Page View" title="Page View"><i class="fas fa-file-alt fa-2x"></i></a>
         </div>
     </section>
 
     <!-- Content Section -->
     <section class="container my-5" id="mainContent">
-        <!-- Les résultats de recherche et les éléments s'afficheront ici -->
+        <div class="card shadow border rounded-xxl">
+            <div class="card-body">
+                <h2 class="card-title text-center">Disposition et Contenu</h2>
+                <div class="neomorphism">
+                    <p>Utilisez cette section pour afficher du contenu spécifique.</p>
+                </div>
+                <div class="animated-element">
+                    <p>Ce texte tourne grâce à une animation CSS avancée.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Navigation Section -->
+    <nav class="container my-5">
+        <div class="d-flex justify-content-center my-3">
+            <a href="#" class="nav-icon" aria-label="Home" title="Home"><i class="fas fa-home"></i></a>
+            <a href="#" class="nav-icon" aria-label="Search" title="Search"><i class="fas fa-search"></i></a>
+            <a href="#" class="nav-icon" aria-label="Notifications" title="Notifications"><i class="fas fa-bell"></i></a>
+            <a href="#" class="nav-icon" aria-label="Trending" title="Trending"><i class="fas fa-fire"></i></a>
+            <a id="userIcon" class="nav-icon" aria-label="User Profile" title="User Profile"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+
+    <!-- Footer Section -->
     <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2024 MonSite. Tous droits réservés.</p>
-            <p>Explorez, apprenez et partagez avec notre communauté. Nous sommes là pour vous accompagner à chaque étape de votre parcours.</p>
-            <div class="d-flex justify-content-center my-3">
-                <a href="#" class="nav-icon" aria-label="Home" title="Home"><i class="fas fa-home"></i></a>
-                <a href="#" class="nav-icon" aria-label="Search" title="Search"><i class="fas fa-search"></i></a>
-                <a href="#" class="nav-icon" aria-label="Notifications" title="Notifications"><i class="fas fa-bell"></i></a>
-                <a href="#" class="nav-icon" aria-label="Trending" title="Trending"><i class="fas fa-fire"></i></a>
-                <a id="userIcon" class="nav-icon" aria-label="User Profile" title="User Profile"><i class="fas fa-user"></i></a>
+        <div class="container">
+            <div class="card shadow border rounded-xxl">
+                <div class="card-body text-center">
+                    <p>&copy; 2024 MonSite. Tous droits réservés.</p>
+                    <p>Explorez, apprenez et partagez avec notre communauté. Nous sommes là pour vous accompagner à chaque étape de votre parcours.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -242,6 +265,10 @@
             <div class="form-group">
                 <label for="userName">Nom</label>
                 <input type="text" class="form-control" id="userName">
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email</label>
+                <input type="email" class="form-control" id="userEmail">
             </div>
             <div class="form-group">
                 <label for="userBirthdate">Date de naissance</label>
@@ -256,7 +283,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script src="scriptA.js"></script>
-    <script src="scriptB.js"></script>
+    <script>
+        // Scroll-triggered effect
+        window.addEventListener('scroll', () => {
+            const element = document.querySelector('.scroll-effect');
+            const position = element.getBoundingClientRect();
+
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                element.classList.add('in-view');
+            } else {
+                element.classList.remove('in-view');
+            }
+        });
+    </script>
 </body>
 </html>
