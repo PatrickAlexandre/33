@@ -11,13 +11,12 @@
     <meta name="robots" content="index, follow">
     <title>Votre Titre</title>
     
-    <!-- 🎨 Framework CSS -->
-    <link rel="stylesheet" href="/css/framework.css">
+    <link rel="stylesheet" href="/css/framework.css"><!-- 🎨 Framework CSS -->
 </head>
 
 <body class="bg-dark text-light">
 
-    <header class="d-flex justify-content-between"><!-- Barre : recherche, tri, filtre -->
+    <header class="d-flex justify-content-between">
         <input type="search" placeholder="Recherche..." class="form-control">
         <button class="btn btn-outline-secondary">Tri</button>
         <div class="d-flex">
@@ -34,63 +33,104 @@
                 <i class="fas fa-th"></i>
             </a>
         </div>
-    </header>
-
-<!-- HUD (Heads-Up Display) -->
-<div class="container mt-3">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="row">
-                <div class="col-4 text-center mb-2">
-                    <img src="https://via.placeholder.com/100" alt="Photo de Profil" class="img-fluid rounded-circle">
-                </div>
-                <div class="col-8">
-                    <div class="mb-2">
-                        <h6 class="mb-1"><i class="fas fa-heart text-danger"></i> Vie</h6>
-                        <div class="progress" style="height: 0.75rem;">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 70%;">70%</div>
-                        </div>
+    </header><!-- Barre : recherche, tri, filtre -->
+    
+    <div class="container-fluid p-3">
+        <div class="row align-items-center justify-content-center">
+            <!-- 📊 Colonne gauche : Profil du joueur et Statistiques de santé -->
+            <div class="col-12 col-sm-6 col-md-4 text-center mb-4">
+                <!-- 👤 Image de profil du joueur -->
+                <img src="https://via.placeholder.com/100" alt="Photo de Profil" class="img-fluid rounded-circle mb-3 shadow-sm">
+                <!-- 🏷️ Nom du personnage -->
+                <h5 class="text-primary">Nom du Personnage</h5>
+                <!-- ❤️ Barre de vie -->
+                <div class="mb-3">
+                    <h6 class="d-inline"><i class="fas fa-heart text-danger"></i> Vie</h6>
+                    <!-- 🧪 Progression de la vie du joueur -->
+                    <div class="progress progress-bar-animated bg-light shadow-sm" style="height: 1rem;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 70%;">70%</div>
                     </div>
-                    <div class="mb-2">
-                        <h6 class="mb-1"><i class="fas fa-bolt text-warning"></i> Énergie</h6>
-                        <div class="progress" style="height: 0.75rem;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">50%</div>
-                        </div>
+                </div>
+                <!-- ⚡ Barre d'énergie -->
+                <div class="mb-3">
+                    <h6 class="d-inline"><i class="fas fa-bolt text-warning"></i> Énergie</h6>
+                    <!-- 🔋 Progression de l'énergie du joueur -->
+                    <div class="progress progress-bar-animated bg-light shadow-sm" style="height: 1rem;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+                <!-- ⭐ Barre d'expérience -->
+                <div>
+                    <h6 class="d-inline"><i class="fas fa-star text-info"></i> Expérience</h6>
+                    <!-- 📈 Progression de l'expérience du joueur -->
+                    <div class="progress progress-bar-animated bg-light shadow-sm" style="height: 1rem;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%;">85%</div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="mb-2">
-                        <h6 class="mb-1"><i class="fas fa-star text-info"></i> Expérience</h6>
-                        <div class="progress" style="height: 0.75rem;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;">85%</div>
-                        </div>
+
+            <!-- 🎯 Colonne droite : Barres d'icônes pour les effets bénéfiques et néfastes -->
+            <div class="col-12 col-sm-6 col-md-4 d-flex flex-column align-items-center">
+                <!-- 🔵 Première barre d'icônes : Effets bénéfiques actuels (Buffs) -->
+                <div class="d-flex mb-3">
+                    <!-- 🛡️ Bouclier (Protection) -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-primary p-2" data-toggle="tooltip" data-placement="top" title="Bouclier">
+                            <i class="fas fa-shield-alt"></i>
+                        </span>
+                        <!-- 3️⃣ Indicateur de quantité (Stacks) pour le bouclier -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">3</span>
+                    </div>
+                    <!-- ⚔️ Épée (Augmentation de l'attaque) -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-secondary p-2" data-toggle="tooltip" data-placement="top" title="Épée">
+                            <i class="fas fa-sword"></i>
+                        </span>
+                        <!-- 5️⃣ Indicateur de quantité pour l'épée -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">5</span>
+                    </div>
+                    <!-- 🎯 Précision (Augmentation de la précision) -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-success p-2" data-toggle="tooltip" data-placement="top" title="Précision">
+                            <i class="fas fa-crosshairs"></i>
+                        </span>
+                        <!-- 2️⃣ Indicateur de quantité pour la précision -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">2</span>
+                    </div>
+                </div>
+                <!-- 🔴 Deuxième barre d'icônes : Effets néfastes actuels (Débuffs) -->
+                <div class="d-flex">
+                    <!-- 🌫️ Mauvaise qualité de l'air -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-warning p-2" data-toggle="tooltip" data-placement="top" title="Mauvaise qualité de l'air">
+                            <i class="fas fa-smog"></i>
+                        </span>
+                        <!-- 4️⃣ Indicateur de quantité pour la mauvaise qualité de l'air -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">4</span>
+                    </div>
+                    <!-- 🌡️ Température élevée -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-info p-2" data-toggle="tooltip" data-placement="top" title="Température élevée">
+                            <i class="fas fa-thermometer-three-quarters"></i>
+                        </span>
+                        <!-- 6️⃣ Indicateur de quantité pour la température élevée -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">6</span>
+                    </div>
+                    <!-- ☢️ Radiations (Effet néfaste rare) -->
+                    <div class="position-relative mx-2">
+                        <span class="badge bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Radiations">
+                            <i class="fas fa-radiation"></i>
+                        </span>
+                        <!-- 1️⃣ Indicateur de quantité pour les radiations -->
+                        <span class="badge bg-dark position-absolute top-0 start-100 translate-middle" style="font-size: 0.7rem;">1</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Barres d'icônes horizontales -->
-        <div class="col-md-4 col-lg-4 d-flex flex-column align-items-center">
-            <!-- Première barre d'icônes -->
-            <div class="d-flex mb-2">
-                <i class="fas fa-shield-alt text-primary mx-1"></i>
-                <i class="fas fa-sword text-secondary mx-1"></i>
-                <i class="fas fa-crosshairs text-success mx-1"></i>
-            </div>
-            <!-- Deuxième barre d'icônes -->
-            <div class="d-flex">
-                <i class="fas fa-map text-warning mx-1"></i>
-                <i class="fas fa-compass text-info mx-1"></i>
-                <i class="fas fa-globe text-danger mx-1"></i>
-            </div>
-        </div>
-    </div>
-</div>
+    </div><!-- 🌟 HUD (Heads-Up Display) - Interface principale pour afficher les informations essentielles du joueur -->
 
 
-
-    <main><!-- Base de données / Contenu -->
+    <main>
         <h1 class="visually-hidden">Base de données</h1>
 
 
@@ -103,7 +143,7 @@
             <div class="content-item">Contenu 2</div>
             <div class="content-item">Contenu 3</div>
         </section>
-    </main>
+    </main><!-- Base de données / Contenu -->
 
     <nav class="navbar navbar-expand navbar-light bg-light fixed-bottom"><!-- Navigation (Responsive mobile Icones centré Bottom) -->
         <ul class="navbar-nav mx-auto d-flex justify-content-around w-100">
@@ -160,6 +200,14 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+    </script><!-- 🛠️ Initialisation des Tooltips pour afficher les informations supplémentaires lors du survol -->
 </body>
 
 
