@@ -1,0 +1,29 @@
+/* 🎨 Fichier CSS personnalisé */
+/* Ajoutez ici vos styles spécifiques à votre projet */
+
+/* 🎨 Styles de base */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Ajuster la couleur de fond si besoin */
+}
+
+/* 🎨 Nav Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item a {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.nav-item a:hover {
+    color: #007bff;
+}
+
+.nav-item i {
+    font-size: 2rem;
+}
